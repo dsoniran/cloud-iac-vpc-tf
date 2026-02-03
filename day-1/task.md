@@ -1,16 +1,4 @@
-# Challenge
-
-<ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item
-    <ol>
-      <li>Indented item</li>
-      <li>Indented item</li>
-    </ol>
-  </li>
-  <li>Fourth item</li>
-</ol>
+# Day 1 - Task
 
 1. Work out what is wrong with your app and db deployment (inside your VPC)
 
@@ -32,11 +20,3 @@
     f. Try to deploy app and db
 
 3. Try to automate app and db deployment in your VPC by using your own images and user data 
-
-**Reminder!** All of this is optional! We will catch up tomorrow and get everyone's deployment working before we move on 🙂
-
-- Luke is available until 17:00
-- AWS available until 19:30
-- Do not work too hard! This is your time so use as you see fit
-- Please join the call tomorrow at 09:00, we will start training proper at 09:30
-- Recording will be available as soon as possible
