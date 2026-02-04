@@ -1,4 +1,18 @@
-# Day 2 - Task
+# Day 2 - Tasks
+
+# Agenda
+* Understand VPCs and how they work
+* Get deployment of app and db working inside VPC
+* Document VPC accordingly
+    * What are they?
+    * Why implement one?
+    * What are CIDR Blocks?
+    * Our VPC Diagram?
+    * Step by step guide?
+* Redo VPC deployment using notes/documentation
+* **Bonus**: Can you deploy and ASG in your VPC?!?
+* **Bonus**: Try to implement a nginx reverse proxy manually
+Make an image (AMI if successful)
 
 ## Research IaC and Terraform
     1. What is IaC?
