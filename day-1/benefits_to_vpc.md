@@ -44,7 +44,7 @@ Here are **web-sourced references** you can point to for the benefits of using a
 
 ---
 
-If you want, I can format these into **reference bullets with inline citations** suitable for your notes or documentation.
+**Sourced from ChatGPt**
 
 [1]: https://www.logicmonitor.com/blog/what-is-a-virtual-private-cloud-in-aws?utm_source=chatgpt.com "What is a virtual private cloud in AWS? | LogicMonitor"
 [2]: https://sedai.io/blog/aws-vpc-cost-optimization-strategies-best-practices?utm_source=chatgpt.com "AWS VPC: Benefits, Pricing & Cost Optimization Strategies | Sedai"
