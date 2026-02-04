@@ -25,8 +25,8 @@ Sparta Education also fosters a supportive community where learners collaborate 
 # Agenda for 5-day Cloud IaC, VPC & TF training
 ###  Trainer - Luke Fairbrass
 1. Introduction to Virtual Private Cloud (VPC); Deploying your first VPC.
-2. Redeploying a VPC, Database and App; Introduction to IaC; Getting set up with Terraform.
-3. Terraform
+2. Redeploying a VPC, Database and App; Introduction to IaC; Installing Terraform.
+3. Access Keys and Shared Credential Files; Getting Started with Terraform.
 4. Terraform
 5. Terraform
 
