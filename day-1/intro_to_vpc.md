@@ -70,7 +70,11 @@ This provides:
 > Nb. Any resource must fall within this CIDR range to be reachable inside the VPC.
 
 # Route Tables
-Every VPC contains **route taables** that determine where traffic goes.
+Every VPC contains **route tables** that determine where traffic goes.
+
+[Azure: Route network traffic with a route table](https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table?tabs=portal#create-a-route)
+
+![alt text](images/azuree_virtual_network.png)
 
 ## Default Route Table
 * Automatically created with the VPC
