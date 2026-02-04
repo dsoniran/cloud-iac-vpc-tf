@@ -24,7 +24,7 @@ override.tf.json
 terraform.rc
 
 # Plan output
-*.tfplan
+*tfplan
 
 # Editor / OS files
 .DS_Store
