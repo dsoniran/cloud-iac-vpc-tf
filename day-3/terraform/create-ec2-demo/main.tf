@@ -17,9 +17,6 @@ resource "aws_instance" "test_instance_1" {
   # add public IP
   associate_public_ip_address = true
 
-  #   # Key-Pair for SSH access
-  #   key_name = "se-dare-key-pair"
-
   # Tags // Name of the instance
   tags = {
     Name = "se-dare-tf-instance"
