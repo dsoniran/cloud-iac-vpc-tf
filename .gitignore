@@ -1,1 +1,8 @@
 *accessKeys.csv
+*actions.md
+
+# tf files
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+tfplan
