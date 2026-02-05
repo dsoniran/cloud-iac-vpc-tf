@@ -38,20 +38,20 @@ variable "private_subnet_cidr_block" {
   description = "value"
 }
 
-variable "availability_zone_1" {
-  default     = "eu-west-1a"
-  description = "value"
-}
+# variable "availability_zone_1" {
+#   default     = "eu-west-1a"
+#   description = "value"
+# }
 
-variable "availability_zone_2" {
-  default     = "eu-west-1b"
-  description = "value"
-}
+# variable "availability_zone_2" {
+#   default     = "eu-west-1b"
+#   description = "value"
+# }
 
-variable "availability_zone_3" {
-  default     = "eu-west-1c"
-  description = "value"
-}
+# variable "availability_zone_3" {
+#   default     = "eu-west-1c"
+#   description = "value"
+# }
 
 variable "internet_gateway_name" {
   default     = "se-dare-tf-igw"
