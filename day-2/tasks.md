@@ -11,8 +11,7 @@
     * Step by step guide?
 * Redo VPC deployment using notes/documentation
 * **Bonus**: Can you deploy and ASG in your VPC?!?
-* **Bonus**: Try to implement a nginx reverse proxy manually
-Make an image (AMI if successful)
+* **Bonus**: Try to implement a nginx reverse proxy manually. Make an image (AMI if successful)
 
 ## Research IaC and Terraform
     1. What is IaC?
@@ -27,7 +26,6 @@ Make an image (AMI if successful)
 
 ## Document the installation process
 Manual installation on MacOS:
-
 
 1. Download the macOS binary from [HashiCorp's Terraform downloads page](https://developer.hashicorp.com/terraform/install).
 

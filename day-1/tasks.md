@@ -1,4 +1,4 @@
-# Day 1 - Task
+# Day 1 - Tasks
 
 1. Work out what is wrong with your app and db deployment (inside your VPC)
 
