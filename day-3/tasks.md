@@ -13,6 +13,6 @@
     * etc.
 
 4. Create a SG with tf (new project)
-5.  Combine the two (Make SG and then create EC2)
+5. Combine the two (Make SG and then create EC2)
 6. Get TF to make a GitHub repo for you (on your account)
 7. Document everything!
