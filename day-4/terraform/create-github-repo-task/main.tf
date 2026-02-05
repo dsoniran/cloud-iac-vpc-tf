@@ -7,5 +7,6 @@ provider "github" {
 resource "github_repository" "test_repo" {
   name        = "se-dare-tf-repo"
   description = "This is a test repo created by Terraform"
-  private     = true
+  # private     =  
+  visibility  = "public"
 }
