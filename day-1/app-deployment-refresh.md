@@ -1,66 +1,77 @@
-# Refresher of App Deploymet
+# Refresher of App Deploymet (12-Feb-26)
 
-Description of key-pair
-Descripton of IP address
-Description of DNC (domain name)
-Description of a port - generally 80 for http
+## Core Concepts
+### Key-Pair
+Used for secure SSH access to EC2 instances (public/private key authentication)
+### IP Address
+A unique identifier for a machine on a network (private inside VPC, public for internet access).
+### Domain Name System (DNS)
+Translates human-readable domain names into IP addresses.
+### Port
+Defines which service is accessed on a machine.
+    * `80` -> HTTP
+    * `443` -> HTTPS
+    * `27017` -> MongoDB (default)
 
-Description of proxy
-Normal proxy, sits on user side, can change the ip address of the server. ie. a vpn. protects the user.
+## Proxy v. Reverse Proxy
+### Proxy (Forward Proxy)
+* Sits on the **user side**
+* Masks the user's IP address; protects the user
+* Common example: VPN
+```
+User -> Proxy -> Server
+```
 
-image
-user>proxy>server
+## Reverse Proxy
+* Sits on the **server side**
+* Masks the backend servers from users
+* Routes traffic to internal services
+* Example use case:
+  * Public traffic on port 80
+  * Forwarded internally to port 3000
+```
+User <- Resverse Proxy -> Server
+```
 
-description of reverse proxy
-user < reverse proxy > server
+## Deplomynet Models
+### Monolith Architecture
+* Aplication and database run together
+* Simple but not scalable
+```
+| App + DB |
+```
 
-reverse proxy on port 3000 to show what is going on port 80.
+## Two-Tier Architecture
+* App and database run on separate instances
+* App connects to database, creates random collections, seeds data (inserts data to database), and serves it via `/post` IP extension.
+```
+App -> DB
+```
 
+## Deployment Evolution
+### Step 1 - Manual Setup
+* Run individual commands (`sudo install`, etc.)
 
+### Step 2 - Scripts
+* Automate setup using a single script. i.e. bash, ps1, python
+* //delete// All actions completed in a single command
 
---
-Monolith deployment
----
-|app|db|
----
+### Step 3 - Custom Image (AMI)
+* Pre-baked machine image
 
-Two tiered deployment
-app+db
-the defort port for mongo db is 27017 instance
+### Step 4 - AMI + User Data
+* Simple script that will run when the instance is launched
+* Used to inject configurations (e.g. MongoDB private IP)
 
-allows the app to connect to the database. once the connection is successful. put pull data 
-app, makes a collection, random data inserted to the mongodb.
-then the post page pulls the data to insert into ip-address/post to show for the user.
-google which is seeding
+### Step 5 - Auto Scaling + Load Balancers
+* App tier scales automatically
+* Load balancers distributes traffic (review recording :/)
 
----
-step 1
-manually - the single commands (sudo install, etc.)
+### Step 6 -  Infrastructure as Code (IaC)
+* **Next Step for this Sprint**: Terraform to deploy both app and db.
 
-step 2
-script, automates something for you. single file
-can be bash, psh, python, etc.
-do all actions in a single command.
-
-step 3
-custom image (aws is ami)
-template for script. saved file.
-
-step 4
-AMI + user data
-simple script that will run when the instance is launched.
-so the insertion of the mongodb ip address for the connection.
-
-Step 5
-autoscaling and load balancers
-
-Step 6
-Still needed to manually deploy the mongodb instance for the connection.
-Next step is the terraform to deploy both.
-
-nb. sudo > super user do
-ssh - secure shell
-scp - secure copy
-
-suggestion to not use scp > consider using git clone https.../.git
-Can store the sparta app on github.
+## Refresher Commands
+* `sudo` -> 'Super User DO'
+* `ssh` -> Secure Shell
+* `scp` -> Secure CoPy
+> **Best Practice**: Avoid `scp` for app code. Use `git clone https://.../.git` from a Git repository (i.e. GitHub) instead. NB. Store sparta app on GitHub.
