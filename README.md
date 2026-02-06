@@ -27,8 +27,8 @@ Sparta Education also fosters a supportive community where learners collaborate 
 1. Introduction to Virtual Private Cloud (VPC); Deploying your first VPC.
 2. Redeploying a VPC, Database and App; Introduction to IaC; Installing Terraform.
 3. Access Keys and Shared Credential Files; Getting Started with Terraform.
-4. Terraform
-5. Terraform
+4. Terraform Variables and tfvards; Terraform and GitHub
+5. Ansible, interview questions and other resources
 
 ## Requirements
 - Gitbash (or terminal if Mac)
