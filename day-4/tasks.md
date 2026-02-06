@@ -15,3 +15,9 @@
    * ASG and LB?
    * VPC with app and db (posts page) deployment
    * TF Modules?
+
+
+# actions
+launch template - convert to main.tf
+to make a new instance
+make the asg and lb - two instances -directing 50/50 based on cpu usage
