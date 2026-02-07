@@ -156,3 +156,8 @@ variable "protocol" {
 variable "app_instance_for_image_name" {
   description = "Name for app instance to create an image"
 }
+
+variable "github_token" {
+  description = "value"
+  sensitive = true
+}

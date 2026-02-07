@@ -7,3 +7,9 @@ output "db_host" {
 #   description = "value"
 #   value = aws_instance.ec2_mongodb_instance.private_ip
 # }
+
+output "github_token" {
+  description = "value"
+  value = var.github_token
+  sensitive = true
+}
