@@ -8,8 +8,8 @@ sudo npm install --yes
 
 # export database private ip address
 # export DB_HOST="$(terraform output -raw db_host)"
-DB_HOST=${db_host}
-echo "DB_HOST=${db_host}" >> etc/environment
+export DB_HOST=${db_host}
+# echo "DB_HOST=${db_host}" >> etc/environment
 
 # kill any active operations
 pm2 kill
