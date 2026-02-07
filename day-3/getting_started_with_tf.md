@@ -1,6 +1,6 @@
 # Getting Started with Terraform
 
-## Itnteracting with Cloud Providers
+## Interacting with Cloud Providers
 There are different ways to interact with cloud providers such as AWS.
 
 ## AWS Management Console
