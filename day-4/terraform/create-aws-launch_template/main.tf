@@ -162,7 +162,7 @@ resource "aws_launch_template" "launch_template" {
     associate_public_ip_address = var.app_allow_public_ip_address
   }
 
-  user_data = filebase64("${path.module}/user_data.sh")
+  # user_data = filebase64("${path.module}/user_data.sh")
 
   ## db_host incorrect on app instance deployment
    ## db_host incorrect on app instance deployment
@@ -171,26 +171,26 @@ resource "aws_launch_template" "launch_template" {
   ## bashrc resets the DB_HOST variable to the value at the time of launch template creation, which is before the MongoDB instance is created and its private IP address is available. As a result, the DB_HOST variable in the user data script contains an incorrect value when the application instance is launched. To resolve this issue, we can update the user data script to fetch the MongoDB instance's private IP address dynamically at runtime instead of hardcoding it during launch template creation. This way, the application instance will always have the correct DB_HOST value when it starts up, regardless of when the MongoDB instance is created. The user data script can be modified to include a command that retrieves the MongoDB instance's private IP address using the AWS CLI or by querying the instance metadata service, ensuring that the application instance can connect to the MongoDB instance successfully even if the launch template is created before the MongoDB instance.     The issue arises because the user data script in the launch template is created before the MongoDB instance is launched, and it captures the DB_HOST value at that time. Since the MongoDB instance's private IP address is not available when the launch template is created, the DB_HOST variable in the user data script contains an incorrect value. When the application instance is launched using this launch template, it tries to connect to the MongoDB instance using the incorrect DB_HOST value, resulting in a connection failure. To fix this issue, we can modify the user data script to fetch the MongoDB instance's private IP address dynamically at runtime instead of hardcoding it during launch template creation. This way, when the application instance starts up, it will retrieve the correct DB_HOST value and be able to connect to the MongoDB instance successfully, regardless of when the launch template was created.
   # after the launch template. To fix this, we can use a placeholder value and then update it after the ASG is created.
 
-  # user_data = base64encode(<<-EOF
-  #     # enter directory with application script
-  #     cd nodejs2-sparta-test-app-2025/app
+  user_data = base64encode(<<-EOF
+      # enter directory with application script
+      cd nodejs2-sparta-test-app-2025/app
 
-  #     # install npm
-  #     sudo npm install --yes
+      # install npm
+      sudo npm install --yes
 
-  #     # export database private ip address
-  #     export DB_HOST="$(terraform output -raw db_host)"
+      # export database private ip address
+      export DB_HOST="$(terraform output -raw db_host)"
 
-  #     # kill any active operations
-  #     pm2 kill
+      # kill any active operations
+      pm2 kill
 
-  #     # seed the data
-  #     node seeds/seed.js
+      # seed the data
+      node seeds/seed.js
 
-  #     # start app
-  #     pm2 start app.js
-  #   EOF
-  #   )
+      # start app
+      pm2 start app.js
+    EOF
+    )
 
     depends_on = [ 
       aws_instance.ec2_mongodb_instance
