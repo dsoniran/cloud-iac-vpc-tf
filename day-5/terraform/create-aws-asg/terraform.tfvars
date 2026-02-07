@@ -42,6 +42,3 @@ wildcard_cidr_block = "0.0.0.0/0"
 
 ## Image Builder details
 app_instance_for_image_name = "se-dare-tf-app-instance-for-image"
-
-## GitHub details
-github_token = "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"
