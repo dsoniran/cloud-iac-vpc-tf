@@ -5,7 +5,7 @@
  * AMI template is based of tech516-luke-node20-app
  * `create-ec2-variables`
 
-## 2. Create AWS EC2 App instance using variables.tf
+## 2. Create AWS EC2 App instance using tf.vars
  * AMI template is based of tech516-luke-node20-app
  * `create-ec2-tfvars`
 
